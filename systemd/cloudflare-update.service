@@ -1,0 +1,8 @@
+[Unit]
+Description=Update Cloudflare DNS record to point to current public IPv6 address of the system
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/dns-updater.sh
